@@ -13,6 +13,7 @@ protocol URLCreatable {
 }
 
 struct URLCreator : URLCreatable {
+    
     func getBooksListingURL() -> String {
         return "\(NetworkConstants.baseUrl.rawValue)/books"
     }

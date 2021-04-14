@@ -16,7 +16,7 @@ protocol APICallable {
 }
 
 protocol DataReceivalAnnouncer {
-    func received(_ bookList : [Book])
+    func received(_ books : Books)
     func receivedDetails(of book : Book)
 }
 
@@ -33,16 +33,16 @@ final class NetworkManager : APICallable {
         network.fetch(from: urlString) { [weak self] (result) in
             switch(result) {
             case .success(let data):
-                var books = [Book]()
+                var books : Books
                 do {
-                    books = try JSONDecoder().decode([Book].self, from: data)
+                    books = try JSONDecoder().decode(Books.self, from: data)
                     print(books.first?.id ?? "")
                     self?.dataReceiver?.received(books)
                 } catch {
                     print(error.localizedDescription)
                 }
-                
                 break
+                
             case .failure(let error):
                 print(error.localizedDescription)
                 break
@@ -65,6 +65,7 @@ final class NetworkManager : APICallable {
                     print(error.localizedDescription)
                 }
                 break
+                
             case .failure(let error):
                 print(error.localizedDescription)
                 break

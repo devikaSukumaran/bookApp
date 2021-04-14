@@ -68,6 +68,7 @@
 			children = (
 				BDCCF844262744D0007D9AA6 /* Networking */,
 				BDCCF84C26274B5A007D9AA6 /* Models */,
+				BDCCF854262755E1007D9AA6 /* ViewModel */,
 				BDCCF82C262723B7007D9AA6 /* AppDelegate.swift */,
 				BDCCF82E262723B7007D9AA6 /* SceneDelegate.swift */,
 				BDCCF830262723B7007D9AA6 /* ViewController.swift */,
@@ -96,6 +97,13 @@
 				BDCCF84D26274B77007D9AA6 /* Book.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BDCCF854262755E1007D9AA6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

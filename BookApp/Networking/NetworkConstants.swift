@@ -8,9 +8,8 @@
 import Foundation
 
 enum NetworkConstants : String {
-    case baseUrl = "https://tpbookserver.herokuapp.com/"
+    case baseUrl = "https://tpbookserver.herokuapp.com"
 }
-
 
 enum NetworkError : Error {
     case failedToFetch

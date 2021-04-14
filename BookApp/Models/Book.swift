@@ -16,15 +16,6 @@ import Foundation
      "author": "Charles R. Ash"
    }
  */
-//struct Book : Codable {
-//    let id : Int
-//    let title : String
-////    let isbn : String
-////    let price : Int
-////    let currencyCode : String
-////    let author : String
-//   // let description : String?
-//}
 
 struct Book: Codable {
     let id: Int
@@ -33,3 +24,5 @@ struct Book: Codable {
     let currencyCode, author: String
     let description : String?
 }
+
+typealias Books = [Book]
