@@ -31,12 +31,13 @@ final class NetworkManager : APICallable {
         
         let urlString = urlCreator.getBooksListingURL()
         network.fetch(from: urlString) { [weak self] (result) in
+            
             switch(result) {
+            
             case .success(let data):
                 var books : Books
                 do {
                     books = try JSONDecoder().decode(Books.self, from: data)
-                    print(books.first?.id ?? "")
                     self?.dataReceiver?.received(books)
                 } catch {
                     print(error.localizedDescription)
