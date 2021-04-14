@@ -19,6 +19,6 @@ struct URLCreator : URLCreatable {
     }
     
     func getBookDetailURL(for id: Int) -> String {
-        return "\(NetworkConstants.baseUrl.rawValue)/book/id=\(id)"
+        return "\(NetworkConstants.baseUrl.rawValue)/book/\(id)"
     }
 }
