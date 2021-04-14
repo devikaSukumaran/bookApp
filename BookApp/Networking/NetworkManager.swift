@@ -8,22 +8,28 @@
 import Foundation
 
 protocol APICallable {
-    var urlCreator : URLCreator{ get }
+    
+    var bookListReceiver : BooksListReceivalAnnouncer? { get }
+    var bookDetailReceiver : BookDetailReceivalAnnouncer? { get }
+    var urlCreator : URLCreator { get }
     var network : Network{ get }
     
     func getBookList()
     func getDetails(of bookId: Int)
 }
 
-protocol DataReceivalAnnouncer {
+protocol BooksListReceivalAnnouncer {
     func received(_ books : Books)
+}
+
+protocol BookDetailReceivalAnnouncer {
     func receivedDetails(of book : Book)
 }
 
 final class NetworkManager : APICallable {
     
-    var dataReceiver : DataReceivalAnnouncer?
-    
+    var bookListReceiver : BooksListReceivalAnnouncer?
+    var bookDetailReceiver : BookDetailReceivalAnnouncer?
     var urlCreator: URLCreator = URLCreator()
     var network: Network = Network()
     
@@ -38,7 +44,7 @@ final class NetworkManager : APICallable {
                 var books : Books
                 do {
                     books = try JSONDecoder().decode(Books.self, from: data)
-                    self?.dataReceiver?.received(books)
+                    self?.bookListReceiver?.received(books)
                 } catch {
                     print(error.localizedDescription)
                 }
@@ -61,7 +67,7 @@ final class NetworkManager : APICallable {
                 var book : Book
                 do {
                     book = try JSONDecoder().decode(Book.self, from: data)
-                    self?.dataReceiver?.receivedDetails(of: book)
+                    self?.bookDetailReceiver?.receivedDetails(of: book)
                 }catch {
                     print(error.localizedDescription)
                 }

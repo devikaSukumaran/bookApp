@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		BDCCF82D262723B7007D9AA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF82C262723B7007D9AA6 /* AppDelegate.swift */; };
 		BDCCF82F262723B7007D9AA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF82E262723B7007D9AA6 /* SceneDelegate.swift */; };
-		BDCCF831262723B7007D9AA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF830262723B7007D9AA6 /* ViewController.swift */; };
+		BDCCF831262723B7007D9AA6 /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF830262723B7007D9AA6 /* BookListViewController.swift */; };
 		BDCCF834262723B7007D9AA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCCF832262723B7007D9AA6 /* Main.storyboard */; };
 		BDCCF836262723BA007D9AA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BDCCF835262723BA007D9AA6 /* Assets.xcassets */; };
 		BDCCF839262723BA007D9AA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BDCCF837262723BA007D9AA6 /* LaunchScreen.storyboard */; };
@@ -18,13 +18,14 @@
 		BDCCF84A26274532007D9AA6 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF84926274532007D9AA6 /* NetworkConstants.swift */; };
 		BDCCF84E26274B77007D9AA6 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF84D26274B77007D9AA6 /* Book.swift */; };
 		BDCCF85226274C54007D9AA6 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF85126274C54007D9AA6 /* NetworkManager.swift */; };
+		BDCCF8572627592D007D9AA6 /* BookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF8562627592D007D9AA6 /* BookListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BDCCF829262723B7007D9AA6 /* BookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCCF82C262723B7007D9AA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BDCCF82E262723B7007D9AA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BDCCF830262723B7007D9AA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BDCCF830262723B7007D9AA6 /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		BDCCF833262723B7007D9AA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BDCCF835262723BA007D9AA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BDCCF838262723BA007D9AA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -34,6 +35,7 @@
 		BDCCF84926274532007D9AA6 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
 		BDCCF84D26274B77007D9AA6 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		BDCCF85126274C54007D9AA6 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		BDCCF8562627592D007D9AA6 /* BookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +71,9 @@
 				BDCCF844262744D0007D9AA6 /* Networking */,
 				BDCCF84C26274B5A007D9AA6 /* Models */,
 				BDCCF854262755E1007D9AA6 /* ViewModel */,
+				BDCCF85A26276BF5007D9AA6 /* Controller */,
 				BDCCF82C262723B7007D9AA6 /* AppDelegate.swift */,
 				BDCCF82E262723B7007D9AA6 /* SceneDelegate.swift */,
-				BDCCF830262723B7007D9AA6 /* ViewController.swift */,
 				BDCCF832262723B7007D9AA6 /* Main.storyboard */,
 				BDCCF835262723BA007D9AA6 /* Assets.xcassets */,
 				BDCCF837262723BA007D9AA6 /* LaunchScreen.storyboard */,
@@ -102,8 +104,17 @@
 		BDCCF854262755E1007D9AA6 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				BDCCF8562627592D007D9AA6 /* BookListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BDCCF85A26276BF5007D9AA6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BDCCF830262723B7007D9AA6 /* BookListViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,10 +188,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDCCF84A26274532007D9AA6 /* NetworkConstants.swift in Sources */,
-				BDCCF831262723B7007D9AA6 /* ViewController.swift in Sources */,
+				BDCCF831262723B7007D9AA6 /* BookListViewController.swift in Sources */,
 				BDCCF84E26274B77007D9AA6 /* Book.swift in Sources */,
 				BDCCF84726274511007D9AA6 /* URLCreator.swift in Sources */,
 				BDCCF85226274C54007D9AA6 /* NetworkManager.swift in Sources */,
+				BDCCF8572627592D007D9AA6 /* BookListViewModel.swift in Sources */,
 				BDCCF82D262723B7007D9AA6 /* AppDelegate.swift in Sources */,
 				BDCCF8422627395E007D9AA6 /* Network.swift in Sources */,
 				BDCCF82F262723B7007D9AA6 /* SceneDelegate.swift in Sources */,

@@ -6,16 +6,6 @@
 //
 
 import Foundation
-/**
- {
-     "id": 500,
-     "title": "Handling Unexpected Errors",
-     "isbn": "978-0590353403",
-     "price": 1399,
-     "currencyCode": "GBP",
-     "author": "Charles R. Ash"
-   }
- */
 
 struct Book: Codable {
     let id: Int
