@@ -11,8 +11,8 @@ protocol APICallable : class {
     
     var bookListReceiver : BooksListReceivalAnnouncer? { get set }
     var bookDetailReceiver : BookDetailReceivalAnnouncer? { get set }
-    var urlCreator : URLCreator { get }
-    var network : Network{ get }
+    var urlCreator : URLCreatable { get set }
+    var network : DataFetchable { get set }
     
     func getBookList()
     func getDetails(of bookId: Int)
@@ -32,8 +32,8 @@ final class NetworkManager : APICallable {
     
     var bookListReceiver : BooksListReceivalAnnouncer?
     var bookDetailReceiver : BookDetailReceivalAnnouncer?
-    var urlCreator: URLCreator = URLCreator()
-    var network: Network = Network()
+    var urlCreator: URLCreatable = URLCreator() as URLCreatable
+    var network: DataFetchable = Network() as DataFetchable
     
     func getBookList() {
         
@@ -75,8 +75,7 @@ final class NetworkManager : APICallable {
                 }
                 break
                 
-            case .failure(let error):
-                print(error.localizedDescription)
+            case .failure( _):
                 self?.bookDetailReceiver?.receivedErrorWhileGettingBookDetail()
                 break
             }
