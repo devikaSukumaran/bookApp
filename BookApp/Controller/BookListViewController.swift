@@ -14,13 +14,13 @@ protocol BookListable {
 class BookListViewController: UIViewController, BookListable, BookListUIUpdater {
     
     @IBOutlet weak var bookTable : UITableView!
+    @IBOutlet weak var loader : UIActivityIndicatorView!
     
     var bookLister: BookLister = BookListViewModel() as BookLister
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
         bookLister.uiUpdater = self
     }
     
@@ -28,6 +28,8 @@ class BookListViewController: UIViewController, BookListable, BookListUIUpdater 
     func updateListUI() {
         
         DispatchQueue.main.async {
+            
+            self.loader.stopAnimating()
             self.bookTable.reloadData()
         }
     }
