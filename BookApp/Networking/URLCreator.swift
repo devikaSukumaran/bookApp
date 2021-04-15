@@ -8,6 +8,7 @@
 import Foundation
 
 protocol URLCreatable {
+    
     func getBooksListingURL() -> String
     func getBookDetailURL(for id: Int) -> String
 }

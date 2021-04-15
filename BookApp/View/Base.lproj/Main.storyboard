@@ -356,13 +356,25 @@ Widely considered one of the best practical guides to programming, Steve McConne
                             <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-pn-fxl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="uBF-jo-En5">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="uBF-jo-En5">
                                         <rect key="frame" x="188.5" y="400.5" width="37" height="37"/>
                                         <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </activityIndicatorView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong. Please try again later." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hu-xo-Tf0">
+                                        <rect key="frame" x="67.5" y="266" width="279" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="96" id="cSi-vK-47Q"/>
+                                            <constraint firstAttribute="width" constant="279" id="kdg-Pw-CaH"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstItem="uBF-jo-En5" firstAttribute="top" secondItem="3hu-xo-Tf0" secondAttribute="bottom" constant="38.5" id="X2M-6t-fmI"/>
+                                    <constraint firstItem="3hu-xo-Tf0" firstAttribute="centerX" secondItem="8q1-pn-fxl" secondAttribute="centerX" id="e2v-lJ-ecu"/>
                                     <constraint firstItem="uBF-jo-En5" firstAttribute="centerX" secondItem="8q1-pn-fxl" secondAttribute="centerX" id="eud-Iu-yQo"/>
                                     <constraint firstItem="uBF-jo-En5" firstAttribute="centerY" secondItem="8q1-pn-fxl" secondAttribute="centerY" id="kij-lx-nTT"/>
                                 </constraints>
@@ -396,7 +408,9 @@ Widely considered one of the best practical guides to programming, Steve McConne
                         <outlet property="bookDescriptionView" destination="HFP-ba-qVO" id="21k-W8-cpA"/>
                         <outlet property="bookTitle" destination="y3g-Sh-ZIg" id="BA2-Ev-O9q"/>
                         <outlet property="currency" destination="QxO-7Z-ycy" id="Rfh-9z-0u9"/>
+                        <outlet property="errorMessage" destination="3hu-xo-Tf0" id="ncH-lK-x3V"/>
                         <outlet property="isbn" destination="fBT-Mu-emT" id="mJ6-kM-d5k"/>
+                        <outlet property="loader" destination="uBF-jo-En5" id="iSi-Oj-rle"/>
                         <outlet property="loaderView" destination="8q1-pn-fxl" id="3l8-31-TjK"/>
                         <outlet property="price" destination="HBZ-aa-nPC" id="9WC-oW-mc0"/>
                     </connections>

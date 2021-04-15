@@ -8,13 +8,16 @@
 import Foundation
 
 protocol BookDetailer : class {
+    
     var book : Book? { get set }
     var apiCaller : APICallable { get }
     var uiUpdater : BookDetailUIUpdater? { get set }
 }
 
 protocol BookDetailUIUpdater {
+    
     func updateListUI()
+    func displayErrorMessage()
 }
 
 class BookDetailViewModel :  BookDetailReceivalAnnouncer, BookDetailer {
@@ -34,5 +37,9 @@ class BookDetailViewModel :  BookDetailReceivalAnnouncer, BookDetailer {
         
         self.book = book
         self.uiUpdater?.updateListUI()
+    }
+    
+    func receivedErrorWhileGettingBookDetail() {
+        self.uiUpdater?.displayErrorMessage()
     }
 }

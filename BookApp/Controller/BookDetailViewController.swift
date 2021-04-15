@@ -22,6 +22,8 @@ class BookDetailViewController : UIViewController, BookDetailable, BookDetailUIU
     @IBOutlet weak var bookContentView : UIView!
     @IBOutlet weak var bookDescriptionView : UIView!
     @IBOutlet weak var loaderView : UIView!
+    @IBOutlet weak var errorMessage : UILabel!
+    @IBOutlet weak var loader : UIActivityIndicatorView!
     
     var bookDetailer: BookDetailer?
     var bookId : Int = 0
@@ -51,6 +53,15 @@ class BookDetailViewController : UIViewController, BookDetailable, BookDetailUIU
                 self.isbn.text = book.isbn
                 self.price.text = "\(book.price)"
             }
+        }
+    }
+    
+    func displayErrorMessage() {
+        
+        DispatchQueue.main.async {
+            
+            self.loader.stopAnimating()
+            self.errorMessage.isHidden = false
         }
     }
 }

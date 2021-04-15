@@ -23,7 +23,9 @@ protocol BooksListReceivalAnnouncer {
 }
 
 protocol BookDetailReceivalAnnouncer {
+    
     func receivedDetails(of book : Book)
+    func receivedErrorWhileGettingBookDetail()
 }
 
 final class NetworkManager : APICallable {
@@ -69,12 +71,13 @@ final class NetworkManager : APICallable {
                     book = try JSONDecoder().decode(Book.self, from: data)
                     self?.bookDetailReceiver?.receivedDetails(of: book)
                 }catch {
-                    print(error.localizedDescription)
+                    self?.bookDetailReceiver?.receivedErrorWhileGettingBookDetail()
                 }
                 break
                 
             case .failure(let error):
                 print(error.localizedDescription)
+                self?.bookDetailReceiver?.receivedErrorWhileGettingBookDetail()
                 break
             }
         }
