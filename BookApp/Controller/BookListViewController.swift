@@ -66,6 +66,7 @@ extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
         
         bookIdSelected = self.bookLister.books[indexPath.row].id
         performSegue(withIdentifier: "detailPageSegue", sender: self)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 

@@ -41,9 +41,9 @@ class BookDetailViewController : UIViewController, BookDetailable, BookDetailUIU
             
             if let book = self.bookDetailer?.book {
                 
-                self.bookContentView.isHidden = false
-                self.bookDescription.isHidden = false
                 self.loaderView.isHidden = true
+                self.bookContentView.isHidden = !self.loaderView.isHidden
+                self.bookDescriptionView.isHidden = !self.loaderView.isHidden
                 
                 self.bookTitle.text = book.title
                 self.author.text = book.author

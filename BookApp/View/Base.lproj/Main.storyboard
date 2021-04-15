@@ -308,10 +308,10 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFP-ba-qVO">
-                                <rect key="frame" x="20" y="326" width="374" height="502"/>
+                                <rect key="frame" x="20" y="334" width="374" height="494"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clz-x1-Ydc">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="502"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="494"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-Jn-34s">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="851.5"/>
@@ -381,7 +381,7 @@ Widely considered one of the best practical guides to programming, Steve McConne
                             <constraint firstItem="8q1-pn-fxl" firstAttribute="leading" secondItem="xk2-bB-JbV" secondAttribute="leading" id="NdW-iQ-rLW"/>
                             <constraint firstItem="xk2-bB-JbV" firstAttribute="trailing" secondItem="HFP-ba-qVO" secondAttribute="trailing" constant="20" id="VBz-cz-E9c"/>
                             <constraint firstItem="xk2-bB-JbV" firstAttribute="bottom" secondItem="W0e-Qu-vVT" secondAttribute="bottom" constant="-34" id="bn6-G9-Pvq"/>
-                            <constraint firstItem="HFP-ba-qVO" firstAttribute="top" secondItem="xk2-bB-JbV" secondAttribute="top" constant="326" id="dLp-us-Fd4"/>
+                            <constraint firstItem="HFP-ba-qVO" firstAttribute="top" secondItem="xk2-bB-JbV" secondAttribute="top" constant="334" id="dLp-us-Fd4"/>
                             <constraint firstItem="8q1-pn-fxl" firstAttribute="top" secondItem="xk2-bB-JbV" secondAttribute="top" id="et8-Kf-Qb7"/>
                             <constraint firstItem="W0e-Qu-vVT" firstAttribute="leading" secondItem="xk2-bB-JbV" secondAttribute="leading" id="iaY-qy-Nzi"/>
                             <constraint firstItem="xk2-bB-JbV" firstAttribute="bottom" secondItem="8q1-pn-fxl" secondAttribute="bottom" constant="-30" id="nSk-gC-cYW"/>
