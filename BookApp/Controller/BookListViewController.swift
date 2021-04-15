@@ -27,6 +27,7 @@ class BookListViewController: UIViewController, BookListable, BookListUIUpdater 
         
         DispatchQueue.main.async {
             //TODO: update UI here using bookLister.books
+            print(self.bookLister.books.count)
         }
     }
 }

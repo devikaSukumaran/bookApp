@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol APICallable {
+protocol APICallable : class {
     
-    var bookListReceiver : BooksListReceivalAnnouncer? { get }
+    var bookListReceiver : BooksListReceivalAnnouncer? { get set }
     var bookDetailReceiver : BookDetailReceivalAnnouncer? { get }
     var urlCreator : URLCreator { get }
     var network : Network{ get }
@@ -33,7 +33,7 @@ final class NetworkManager : APICallable {
     var urlCreator: URLCreator = URLCreator()
     var network: Network = Network()
     
-    func getBookList(){
+    func getBookList() {
         
         let urlString = urlCreator.getBooksListingURL()
         network.fetch(from: urlString) { [weak self] (result) in
@@ -58,7 +58,7 @@ final class NetworkManager : APICallable {
         
     }
     
-    func getDetails(of bookId: Int){
+    func getDetails(of bookId: Int) {
         
         let urlString = urlCreator.getBookDetailURL(for: bookId)
         network.fetch(from: urlString) { [weak self] (result) in

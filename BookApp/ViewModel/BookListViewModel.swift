@@ -10,8 +10,8 @@ import Foundation
 protocol BookLister : class {
     
     var books : Books { get set }
-    var networkManager : NetworkManager { get }
     var uiUpdater : BookListUIUpdater? { get set }
+    var apiCaller : APICallable { get }
 }
 
 protocol BookListUIUpdater {
@@ -21,13 +21,13 @@ protocol BookListUIUpdater {
 class BookListViewModel : BookLister, BooksListReceivalAnnouncer {
     
     var books: Books = []
-    var networkManager : NetworkManager = NetworkManager()
     var uiUpdater : BookListUIUpdater?
+    var apiCaller : APICallable = NetworkManager() as APICallable
     
     init() {
         
-        networkManager.bookListReceiver = self
-        networkManager.getBookList()
+        apiCaller.bookListReceiver = self
+        apiCaller.getBookList()
     }
     
     //MARK: BooksListReceivalAnnouncer
