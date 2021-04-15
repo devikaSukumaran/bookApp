@@ -27,6 +27,7 @@ class BookDetailViewController : UIViewController, BookDetailable, BookDetailUIU
     func updateListUI() {
         
         DispatchQueue.main.async {
+            print(self.bookDetailer?.book?.author ?? "" )
             //TODO: update UI here using self.bookDetailer?.book
         }
     }

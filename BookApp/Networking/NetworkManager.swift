@@ -10,7 +10,7 @@ import Foundation
 protocol APICallable : class {
     
     var bookListReceiver : BooksListReceivalAnnouncer? { get set }
-    var bookDetailReceiver : BookDetailReceivalAnnouncer? { get }
+    var bookDetailReceiver : BookDetailReceivalAnnouncer? { get set }
     var urlCreator : URLCreator { get }
     var network : Network{ get }
     
