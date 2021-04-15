@@ -8,23 +8,26 @@
 import UIKit
 
 protocol BookDetailable {
-    var bookDetailViewModel : BookDetailViewModel? { get set }
+    var bookDetailer : BookDetailer? { get set }
 }
 
 class BookDetailViewController : UIViewController, BookDetailable, BookDetailUIUpdater {
     
-    var bookDetailViewModel: BookDetailViewModel?
+    var bookDetailer: BookDetailer?
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        bookDetailViewModel = BookDetailViewModel(bookId: 100)
-        bookDetailViewModel?.uiUpdater = self
+        bookDetailer = BookDetailViewModel(bookId: 100) as BookDetailer
+        bookDetailer?.uiUpdater = self
     }
     
     //MARK: BookDetailUIUpdater
     func updateListUI() {
-        print(self.bookDetailViewModel?.book?.author ?? "")
+        
+        DispatchQueue.main.async {
+            //TODO: update UI here using self.bookDetailer?.book
+        }
     }
 }

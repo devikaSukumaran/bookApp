@@ -24,7 +24,10 @@ class BookListViewController: UIViewController, BookListable, BookListUIUpdater 
     
     //MARK: BookListUIUpdater
     func updateListUI() {
-        print(bookLister.books.count)
+        
+        DispatchQueue.main.async {
+            //TODO: update UI here using bookLister.books
+        }
     }
 }
 
