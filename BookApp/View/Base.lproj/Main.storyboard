@@ -219,6 +219,162 @@
             </objects>
             <point key="canvasLocation" x="17.39130434782609" y="39.508928571428569"/>
         </scene>
+        <!--Book Detail View Controller-->
+        <scene sceneID="MST-kc-DDg">
+            <objects>
+                <viewController id="uO8-cA-Swx" customClass="BookDetailViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jU2-lV-23O">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="ggQ-XY-DKo">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0e-Qu-vVT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Complete: A Practical Handbook of Software Construction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3g-Sh-ZIg">
+                                        <rect key="frame" x="20" y="60" width="374" height="141"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="141" id="ZHc-H1-84z"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mike Riley" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y9t-dP-Nwg">
+                                        <rect key="frame" x="20" y="221" width="374" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="31" id="al4-02-wAr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Pbn-zi-Sjb">
+                                        <rect key="frame" x="20" y="260" width="189" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-Jy-CS9">
+                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="978-0735619678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBT-Mu-emT">
+                                                <rect key="frame" x="54.5" y="0.0" width="134.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20.5" id="4v0-8y-vPN"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Fjy-CE-LLB">
+                                        <rect key="frame" x="20" y="288.5" width="74" height="20.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBZ-aa-nPC">
+                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxO-7Z-ycy">
+                                                <rect key="frame" x="41.5" y="0.0" width="32.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20.5" id="KUQ-WL-2gT"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="y3g-Sh-ZIg" firstAttribute="leading" secondItem="W0e-Qu-vVT" secondAttribute="leading" constant="20" id="2Xg-Qq-Ahf"/>
+                                    <constraint firstAttribute="trailing" secondItem="y3g-Sh-ZIg" secondAttribute="trailing" constant="20" id="4U5-H0-UrK"/>
+                                    <constraint firstItem="Y9t-dP-Nwg" firstAttribute="top" secondItem="y3g-Sh-ZIg" secondAttribute="bottom" constant="20" id="AvW-4N-FUw"/>
+                                    <constraint firstAttribute="trailing" secondItem="Y9t-dP-Nwg" secondAttribute="trailing" constant="20" id="SU7-Ew-gZH"/>
+                                    <constraint firstItem="y3g-Sh-ZIg" firstAttribute="top" secondItem="W0e-Qu-vVT" secondAttribute="top" constant="60" id="Ucb-ay-7JX"/>
+                                    <constraint firstItem="Y9t-dP-Nwg" firstAttribute="leading" secondItem="W0e-Qu-vVT" secondAttribute="leading" constant="20" id="Ulf-3o-pQK"/>
+                                    <constraint firstItem="Pbn-zi-Sjb" firstAttribute="leading" secondItem="W0e-Qu-vVT" secondAttribute="leading" constant="20" symbolic="YES" id="aK2-zv-gT6"/>
+                                    <constraint firstItem="Fjy-CE-LLB" firstAttribute="top" secondItem="Pbn-zi-Sjb" secondAttribute="bottom" constant="8" symbolic="YES" id="u8z-tY-350"/>
+                                    <constraint firstItem="Fjy-CE-LLB" firstAttribute="leading" secondItem="W0e-Qu-vVT" secondAttribute="leading" constant="20" symbolic="YES" id="xpS-uy-EKV"/>
+                                    <constraint firstItem="Pbn-zi-Sjb" firstAttribute="top" secondItem="Y9t-dP-Nwg" secondAttribute="bottom" constant="8" symbolic="YES" id="zRR-pn-e8l"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFP-ba-qVO">
+                                <rect key="frame" x="20" y="370" width="374" height="512"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clz-x1-Ydc">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="512"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-Jn-34s">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="851.5"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z86-Pi-h55">
+                                                        <rect key="frame" x="20" y="20" width="335" height="811.5"/>
+                                                        <mutableString key="text">Widely considered one of the best practical guides to programming, Steve McConnell’s original CODE COMPLETE has been helping developers write better software for more than a decade. Now this classic book has been fully updated and revised with leading-edge practices—and hundreds of new code samples—illustrating the art and science of software construction. Capturing the body of knowledge available from research, academia, and everyday commercial practice, McConnell synthesizes the most effective techniques and must-know principles into clear, pragmatic guidance. No matter what your experience level, development environment, or project size, this book will inform and stimulate your thinking—and help you build the highest quality code.
+
+Widely considered one of the best practical guides to programming, Steve McConnell’s original CODE COMPLETE has been helping developers write better software for more than a decade. Now this classic book has been fully updated and revised with leading-edge practices—and hundreds of new code samples—illustrating the art and science of software construction. Capturing the body of knowledge available from research, academia, and everyday commercial practice, McConnell synthesizes the most effective techniques and must-know principles into clear, pragmatic guidance. No matter what your experience level, development environment, or project size, this book will inform and stimulate your thinking—and help you build the highest quality code.
+</mutableString>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.85098039215686272" green="0.90980392156862744" blue="0.90196078431372551" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Z86-Pi-h55" secondAttribute="trailing" constant="20" symbolic="YES" id="5nQ-kz-52C"/>
+                                                    <constraint firstItem="Z86-Pi-h55" firstAttribute="leading" secondItem="dWf-Jn-34s" secondAttribute="leading" constant="20" symbolic="YES" id="sHw-AC-Hwo"/>
+                                                    <constraint firstItem="Z86-Pi-h55" firstAttribute="top" secondItem="dWf-Jn-34s" secondAttribute="top" constant="20" symbolic="YES" id="wAf-Ra-DpC"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Z86-Pi-h55" secondAttribute="bottom" constant="20" symbolic="YES" id="wTE-CZ-q0G"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="dWf-Jn-34s" secondAttribute="trailing" id="5GS-IS-IuO"/>
+                                            <constraint firstAttribute="bottom" secondItem="dWf-Jn-34s" secondAttribute="bottom" id="70M-vC-ZpN"/>
+                                            <constraint firstItem="dWf-Jn-34s" firstAttribute="leading" secondItem="clz-x1-Ydc" secondAttribute="leading" id="IzX-AY-0c9"/>
+                                            <constraint firstItem="dWf-Jn-34s" firstAttribute="top" secondItem="clz-x1-Ydc" secondAttribute="top" id="JhX-ej-tAo"/>
+                                            <constraint firstItem="dWf-Jn-34s" firstAttribute="width" secondItem="clz-x1-Ydc" secondAttribute="width" multiplier="1.00267" id="xCB-5B-L92"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="clz-x1-Ydc" secondAttribute="trailing" id="4BP-F1-pdZ"/>
+                                    <constraint firstItem="clz-x1-Ydc" firstAttribute="top" secondItem="HFP-ba-qVO" secondAttribute="top" id="DZj-bk-Jph"/>
+                                    <constraint firstItem="clz-x1-Ydc" firstAttribute="leading" secondItem="HFP-ba-qVO" secondAttribute="leading" id="NqT-lg-ncy"/>
+                                    <constraint firstAttribute="bottom" secondItem="clz-x1-Ydc" secondAttribute="bottom" id="edB-ju-DfE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="xk2-bB-JbV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="xk2-bB-JbV" firstAttribute="trailing" secondItem="W0e-Qu-vVT" secondAttribute="trailing" id="5vh-Lu-kn4"/>
+                            <constraint firstItem="ggQ-XY-DKo" firstAttribute="top" secondItem="jU2-lV-23O" secondAttribute="top" id="A6k-4p-ehE"/>
+                            <constraint firstItem="ggQ-XY-DKo" firstAttribute="leading" secondItem="xk2-bB-JbV" secondAttribute="leading" id="BO0-nc-NSI"/>
+                            <constraint firstItem="W0e-Qu-vVT" firstAttribute="top" secondItem="jU2-lV-23O" secondAttribute="top" id="Bnp-Hx-djf"/>
+                            <constraint firstItem="xk2-bB-JbV" firstAttribute="trailing" secondItem="ggQ-XY-DKo" secondAttribute="trailing" id="GP8-HD-3eF"/>
+                            <constraint firstItem="xk2-bB-JbV" firstAttribute="bottom" secondItem="ggQ-XY-DKo" secondAttribute="bottom" constant="-34" id="JwI-Wq-ecM"/>
+                            <constraint firstItem="xk2-bB-JbV" firstAttribute="trailing" secondItem="HFP-ba-qVO" secondAttribute="trailing" constant="20" id="VBz-cz-E9c"/>
+                            <constraint firstItem="xk2-bB-JbV" firstAttribute="bottom" secondItem="W0e-Qu-vVT" secondAttribute="bottom" constant="-34" id="bn6-G9-Pvq"/>
+                            <constraint firstItem="HFP-ba-qVO" firstAttribute="top" secondItem="xk2-bB-JbV" secondAttribute="top" constant="326" id="dLp-us-Fd4"/>
+                            <constraint firstItem="W0e-Qu-vVT" firstAttribute="leading" secondItem="xk2-bB-JbV" secondAttribute="leading" id="iaY-qy-Nzi"/>
+                            <constraint firstItem="HFP-ba-qVO" firstAttribute="bottom" secondItem="xk2-bB-JbV" secondAttribute="bottom" constant="20" id="peJ-Ju-meR"/>
+                            <constraint firstItem="HFP-ba-qVO" firstAttribute="leading" secondItem="xk2-bB-JbV" secondAttribute="leading" constant="20" id="yIo-De-jge"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OLu-pi-T4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="889.85507246376824" y="39.508928571428569"/>
+        </scene>
     </scenes>
     <resources>
         <image name="BackgroundImage" width="296.66665649414062" height="444.66665649414062"/>
