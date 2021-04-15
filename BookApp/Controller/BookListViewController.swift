@@ -8,23 +8,23 @@
 import UIKit
 
 protocol BookListable {
-    var bookListViewModel : BookListViewModel { get set }
+    var bookLister : BookLister { get set }
 }
 
 class BookListViewController: UIViewController, BookListable, BookListUIUpdater {
     
-    var bookListViewModel = BookListViewModel()
+    var bookLister: BookLister = BookListViewModel() as BookLister
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        bookListViewModel.uiUpdater = self
+        bookLister.uiUpdater = self
     }
     
     //MARK: BookListUIUpdater
     func updateListUI() {
-        print(bookListViewModel.books.count)
+        print(bookLister.books.count)
     }
 }
 

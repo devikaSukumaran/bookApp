@@ -7,11 +7,11 @@
 
 import Foundation
 
-protocol BookLister {
+protocol BookLister : class {
     
     var books : Books { get set }
     var networkManager : NetworkManager { get }
-    var uiUpdater : BookListUIUpdater? { get }
+    var uiUpdater : BookListUIUpdater? { get set }
 }
 
 protocol BookListUIUpdater {
