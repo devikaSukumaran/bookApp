@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD760D8826287A9E003B8C9F /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD760D8726287A9E003B8C9F /* BookListCell.swift */; };
 		BD96CD91262774F600A84011 /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96CD90262774F600A84011 /* BookDetailViewModel.swift */; };
 		BDCCF82D262723B7007D9AA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF82C262723B7007D9AA6 /* AppDelegate.swift */; };
 		BDCCF82F262723B7007D9AA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF82E262723B7007D9AA6 /* SceneDelegate.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BD760D8726287A9E003B8C9F /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
 		BD96CD90262774F600A84011 /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
 		BDCCF829262723B7007D9AA6 /* BookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCCF82C262723B7007D9AA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				BDCCF832262723B7007D9AA6 /* Main.storyboard */,
+				BD760D8726287A9E003B8C9F /* BookListCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD760D8826287A9E003B8C9F /* BookListCell.swift in Sources */,
 				BDCCF84A26274532007D9AA6 /* NetworkConstants.swift in Sources */,
 				BDCCF831262723B7007D9AA6 /* BookListViewController.swift in Sources */,
 				BDCCF84E26274B77007D9AA6 /* Book.swift in Sources */,

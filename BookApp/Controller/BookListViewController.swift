@@ -13,6 +13,8 @@ protocol BookListable {
 
 class BookListViewController: UIViewController, BookListable, BookListUIUpdater {
     
+    @IBOutlet weak var bookTable : UITableView!
+    
     var bookLister: BookLister = BookListViewModel() as BookLister
     
     override func viewDidLoad() {
@@ -26,9 +28,26 @@ class BookListViewController: UIViewController, BookListable, BookListUIUpdater 
     func updateListUI() {
         
         DispatchQueue.main.async {
-            //TODO: update UI here using bookLister.books
-            print(self.bookLister.books.count)
+            self.bookTable.reloadData()
         }
+    }
+}
+
+extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.bookLister.books.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "bookListCell") as? BookListCell {
+            
+            let book = self.bookLister.books[indexPath.row]
+            cell.populateCell(with: book)
+            return cell
+        }
+        return UITableViewCell()
     }
 }
 
