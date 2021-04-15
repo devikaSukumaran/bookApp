@@ -213,6 +213,7 @@
                     <connections>
                         <outlet property="bookTable" destination="16z-fh-1Ha" id="Mix-Hm-fTK"/>
                         <outlet property="loader" destination="D2x-ML-RMQ" id="tXR-jB-vR0"/>
+                        <segue destination="uO8-cA-Swx" kind="presentation" identifier="detailPageSegue" id="9TM-JZ-U61"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -224,14 +225,14 @@
             <objects>
                 <viewController id="uO8-cA-Swx" customClass="BookDetailViewController" customModule="BookApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jU2-lV-23O">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BackgroundImage" translatesAutoresizingMaskIntoConstraints="NO" id="ggQ-XY-DKo">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
-                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0e-Qu-vVT">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            <view hidden="YES" alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0e-Qu-vVT">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Code Complete: A Practical Handbook of Software Construction" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y3g-Sh-ZIg">
                                         <rect key="frame" x="20" y="60" width="374" height="141"/>
@@ -306,11 +307,11 @@
                                     <constraint firstItem="Pbn-zi-Sjb" firstAttribute="top" secondItem="Y9t-dP-Nwg" secondAttribute="bottom" constant="8" symbolic="YES" id="zRR-pn-e8l"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFP-ba-qVO">
-                                <rect key="frame" x="20" y="370" width="374" height="512"/>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFP-ba-qVO">
+                                <rect key="frame" x="20" y="326" width="374" height="502"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clz-x1-Ydc">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="512"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="502"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dWf-Jn-34s">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="851.5"/>
@@ -344,12 +345,26 @@ Widely considered one of the best practical guides to programming, Steve McConne
                                         </constraints>
                                     </scrollView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.85098039219999999" green="0.90980392160000001" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="clz-x1-Ydc" secondAttribute="trailing" id="4BP-F1-pdZ"/>
                                     <constraint firstItem="clz-x1-Ydc" firstAttribute="top" secondItem="HFP-ba-qVO" secondAttribute="top" id="DZj-bk-Jph"/>
                                     <constraint firstItem="clz-x1-Ydc" firstAttribute="leading" secondItem="HFP-ba-qVO" secondAttribute="leading" id="NqT-lg-ncy"/>
                                     <constraint firstAttribute="bottom" secondItem="clz-x1-Ydc" secondAttribute="bottom" id="edB-ju-DfE"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.65000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8q1-pn-fxl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="838"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="uBF-jo-En5">
+                                        <rect key="frame" x="188.5" y="400.5" width="37" height="37"/>
+                                        <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="uBF-jo-En5" firstAttribute="centerX" secondItem="8q1-pn-fxl" secondAttribute="centerX" id="eud-Iu-yQo"/>
+                                    <constraint firstItem="uBF-jo-En5" firstAttribute="centerY" secondItem="8q1-pn-fxl" secondAttribute="centerY" id="kij-lx-nTT"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -360,16 +375,31 @@ Widely considered one of the best practical guides to programming, Steve McConne
                             <constraint firstItem="ggQ-XY-DKo" firstAttribute="top" secondItem="jU2-lV-23O" secondAttribute="top" id="A6k-4p-ehE"/>
                             <constraint firstItem="ggQ-XY-DKo" firstAttribute="leading" secondItem="xk2-bB-JbV" secondAttribute="leading" id="BO0-nc-NSI"/>
                             <constraint firstItem="W0e-Qu-vVT" firstAttribute="top" secondItem="jU2-lV-23O" secondAttribute="top" id="Bnp-Hx-djf"/>
+                            <constraint firstItem="xk2-bB-JbV" firstAttribute="trailing" secondItem="8q1-pn-fxl" secondAttribute="trailing" id="Fgc-6O-VUf"/>
                             <constraint firstItem="xk2-bB-JbV" firstAttribute="trailing" secondItem="ggQ-XY-DKo" secondAttribute="trailing" id="GP8-HD-3eF"/>
                             <constraint firstItem="xk2-bB-JbV" firstAttribute="bottom" secondItem="ggQ-XY-DKo" secondAttribute="bottom" constant="-34" id="JwI-Wq-ecM"/>
+                            <constraint firstItem="8q1-pn-fxl" firstAttribute="leading" secondItem="xk2-bB-JbV" secondAttribute="leading" id="NdW-iQ-rLW"/>
                             <constraint firstItem="xk2-bB-JbV" firstAttribute="trailing" secondItem="HFP-ba-qVO" secondAttribute="trailing" constant="20" id="VBz-cz-E9c"/>
                             <constraint firstItem="xk2-bB-JbV" firstAttribute="bottom" secondItem="W0e-Qu-vVT" secondAttribute="bottom" constant="-34" id="bn6-G9-Pvq"/>
                             <constraint firstItem="HFP-ba-qVO" firstAttribute="top" secondItem="xk2-bB-JbV" secondAttribute="top" constant="326" id="dLp-us-Fd4"/>
+                            <constraint firstItem="8q1-pn-fxl" firstAttribute="top" secondItem="xk2-bB-JbV" secondAttribute="top" id="et8-Kf-Qb7"/>
                             <constraint firstItem="W0e-Qu-vVT" firstAttribute="leading" secondItem="xk2-bB-JbV" secondAttribute="leading" id="iaY-qy-Nzi"/>
+                            <constraint firstItem="xk2-bB-JbV" firstAttribute="bottom" secondItem="8q1-pn-fxl" secondAttribute="bottom" constant="-30" id="nSk-gC-cYW"/>
                             <constraint firstItem="HFP-ba-qVO" firstAttribute="bottom" secondItem="xk2-bB-JbV" secondAttribute="bottom" constant="20" id="peJ-Ju-meR"/>
                             <constraint firstItem="HFP-ba-qVO" firstAttribute="leading" secondItem="xk2-bB-JbV" secondAttribute="leading" constant="20" id="yIo-De-jge"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="author" destination="Y9t-dP-Nwg" id="7Q5-2H-e8c"/>
+                        <outlet property="bookContentView" destination="W0e-Qu-vVT" id="86f-fI-4lT"/>
+                        <outlet property="bookDescription" destination="Z86-Pi-h55" id="zrF-A2-Hkj"/>
+                        <outlet property="bookDescriptionView" destination="HFP-ba-qVO" id="21k-W8-cpA"/>
+                        <outlet property="bookTitle" destination="y3g-Sh-ZIg" id="BA2-Ev-O9q"/>
+                        <outlet property="currency" destination="QxO-7Z-ycy" id="Rfh-9z-0u9"/>
+                        <outlet property="isbn" destination="fBT-Mu-emT" id="mJ6-kM-d5k"/>
+                        <outlet property="loaderView" destination="8q1-pn-fxl" id="3l8-31-TjK"/>
+                        <outlet property="price" destination="HBZ-aa-nPC" id="9WC-oW-mc0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OLu-pi-T4Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

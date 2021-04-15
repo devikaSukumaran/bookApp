@@ -17,6 +17,7 @@ class BookListViewController: UIViewController, BookListable, BookListUIUpdater 
     @IBOutlet weak var loader : UIActivityIndicatorView!
     
     var bookLister: BookLister = BookListViewModel() as BookLister
+    private var bookIdSelected : Int?
     
     override func viewDidLoad() {
         
@@ -31,6 +32,15 @@ class BookListViewController: UIViewController, BookListable, BookListUIUpdater 
             
             self.loader.stopAnimating()
             self.bookTable.reloadData()
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.destination is BookDetailViewController {
+            if let destinationVC = segue.destination as? BookDetailViewController {
+                destinationVC.bookId = self.bookIdSelected ?? 0
+            }
         }
     }
 }
@@ -50,6 +60,12 @@ extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        bookIdSelected = self.bookLister.books[indexPath.row].id
+        performSegue(withIdentifier: "detailPageSegue", sender: self)
     }
 }
 
