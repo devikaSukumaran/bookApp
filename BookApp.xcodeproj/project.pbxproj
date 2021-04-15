@@ -81,7 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				BDCCF844262744D0007D9AA6 /* Networking */,
-				BDCCF84C26274B5A007D9AA6 /* Models */,
+				BDCCF84C26274B5A007D9AA6 /* Model */,
 				BD96CD932627792200A84011 /* View */,
 				BDCCF854262755E1007D9AA6 /* ViewModel */,
 				BDCCF85A26276BF5007D9AA6 /* Controller */,
@@ -105,12 +105,12 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		BDCCF84C26274B5A007D9AA6 /* Models */ = {
+		BDCCF84C26274B5A007D9AA6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				BDCCF84D26274B77007D9AA6 /* Book.swift */,
 			);
-			path = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		BDCCF854262755E1007D9AA6 /* ViewModel */ = {
