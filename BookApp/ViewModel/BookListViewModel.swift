@@ -8,31 +8,27 @@
 import Foundation
 
 protocol BookLister : class {
-    
     var books : Books { get set }
     var uiUpdater : BookListUIUpdater? { get set }
-    var apiCaller : APICallable { get }
+    func beginAPICall()
 }
 
-protocol BookListUIUpdater {
+protocol BookListUIUpdater : class {
     func updateListUI()
 }
 
 class BookListViewModel : BookLister, BooksListReceivalAnnouncer {
-    
     var books: Books = []
-    var uiUpdater : BookListUIUpdater?
-    var apiCaller : APICallable = NetworkManager() as APICallable
+    weak var uiUpdater : BookListUIUpdater?
+    private var apiCaller : APICallable = NetworkManager()
     
-    init() {
-        
+    func beginAPICall() {
         apiCaller.bookListReceiver = self
         apiCaller.getBookList()
     }
     
     //MARK: BooksListReceivalAnnouncer
     func received(_ books: Books) {
-        
         self.books = books
         self.uiUpdater?.updateListUI()
     }

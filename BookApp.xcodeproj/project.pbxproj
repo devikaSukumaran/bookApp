@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BD760D8826287A9E003B8C9F /* BookListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD760D8726287A9E003B8C9F /* BookListCell.swift */; };
+		BD760D8D262997AD003B8C9F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD760D8C262997AD003B8C9F /* Constants.swift */; };
 		BD96CD91262774F600A84011 /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD96CD90262774F600A84011 /* BookDetailViewModel.swift */; };
 		BDCCF82D262723B7007D9AA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF82C262723B7007D9AA6 /* AppDelegate.swift */; };
 		BDCCF82F262723B7007D9AA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDCCF82E262723B7007D9AA6 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		BD760D8726287A9E003B8C9F /* BookListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListCell.swift; sourceTree = "<group>"; };
+		BD760D8C262997AD003B8C9F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BD96CD90262774F600A84011 /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
 		BDCCF829262723B7007D9AA6 /* BookApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BDCCF82C262723B7007D9AA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				BDCCF835262723BA007D9AA6 /* Assets.xcassets */,
 				BDCCF837262723BA007D9AA6 /* LaunchScreen.storyboard */,
 				BDCCF83A262723BA007D9AA6 /* Info.plist */,
+				BD760D8C262997AD003B8C9F /* Constants.swift */,
 			);
 			path = BookApp;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				BDCCF84726274511007D9AA6 /* URLCreator.swift in Sources */,
 				BDCCF85D26277434007D9AA6 /* BookDetailViewController.swift in Sources */,
 				BDCCF85226274C54007D9AA6 /* NetworkManager.swift in Sources */,
+				BD760D8D262997AD003B8C9F /* Constants.swift in Sources */,
 				BDCCF8572627592D007D9AA6 /* BookListViewModel.swift in Sources */,
 				BD96CD91262774F600A84011 /* BookDetailViewModel.swift in Sources */,
 				BDCCF82D262723B7007D9AA6 /* AppDelegate.swift in Sources */,

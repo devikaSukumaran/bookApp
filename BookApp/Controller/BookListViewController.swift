@@ -7,65 +7,56 @@
 
 import UIKit
 
-protocol BookListable {
-    var bookLister : BookLister { get set }
-}
-
-class BookListViewController: UIViewController, BookListable, BookListUIUpdater {
+class BookListViewController: UIViewController, BookListUIUpdater {
     
-    @IBOutlet weak var bookTable : UITableView!
-    @IBOutlet weak var loader : UIActivityIndicatorView!
+    @IBOutlet private weak var booksTableView : UITableView!
+    @IBOutlet private weak var loader : UIActivityIndicatorView!
     
-    var bookLister: BookLister = BookListViewModel() as BookLister
+    private var booksViewModel: BookLister = BookListViewModel()
     private var bookIdSelected : Int?
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        bookLister.uiUpdater = self
+        booksViewModel.uiUpdater = self
+        booksViewModel.beginAPICall()
     }
     
     //MARK: BookListUIUpdater
     func updateListUI() {
-        
         DispatchQueue.main.async {
-            
             self.loader.stopAnimating()
-            self.bookTable.reloadData()
+            self.booksTableView.reloadData()
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        if segue.destination is BookDetailViewController {
-            if let destinationVC = segue.destination as? BookDetailViewController {
-                destinationVC.bookId = self.bookIdSelected ?? 0
-            }
+        if let destinationVC = segue.destination as? BookDetailViewController {
+            destinationVC.bookId = self.bookIdSelected ?? 0
         }
     }
 }
 
+//MARK: UITableViewDelegate and UITableViewDataSource
 extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.bookLister.books.count
+        return self.booksViewModel.books.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "bookListCell") as? BookListCell {
-            
-            let book = self.bookLister.books[indexPath.row]
-            cell.populateCell(with: book)
-            return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.booksTableCellName) as? BookListCell else {
+            fatalError(Constants.errorMessageForMissingCells)
         }
-        return UITableViewCell()
+        
+        let book = self.booksViewModel.books[indexPath.row]
+        cell.populate(with: book)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        bookIdSelected = self.bookLister.books[indexPath.row].id
-        performSegue(withIdentifier: "detailPageSegue", sender: self)
+        bookIdSelected = self.booksViewModel.books[indexPath.row].id
+        performSegue(withIdentifier: Constants.segueToBookDetailScreen, sender: self)
         tableView.deselectRow(at: indexPath, animated: false)
     }
 }

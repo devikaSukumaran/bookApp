@@ -15,7 +15,7 @@ class BookListCell : UITableViewCell {
     @IBOutlet weak var price : UILabel!
     @IBOutlet weak var currency : UILabel!
     
-    func populateCell(with values: Book) {
+    func populate(with values: Book) {
         updateCell(with: values)
     }
     

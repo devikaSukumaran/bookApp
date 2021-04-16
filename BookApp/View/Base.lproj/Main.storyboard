@@ -211,7 +211,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="bookTable" destination="16z-fh-1Ha" id="Mix-Hm-fTK"/>
+                        <outlet property="booksTableView" destination="16z-fh-1Ha" id="Mix-Hm-fTK"/>
                         <outlet property="loader" destination="D2x-ML-RMQ" id="tXR-jB-vR0"/>
                         <segue destination="uO8-cA-Swx" kind="presentation" identifier="detailPageSegue" id="9TM-JZ-U61"/>
                     </connections>
