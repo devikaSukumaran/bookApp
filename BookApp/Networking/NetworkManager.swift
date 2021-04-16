@@ -24,7 +24,7 @@ protocol BooksListReceivalAnnouncer : class {
 
 protocol BookDetailReceivalAnnouncer : class {
     func receivedDetails(of book : Book)
-    func receivedErrorWhileGettingBookDetail()
+    func receivedErrorWhileFetchingBookDetail()
 }
 
 final class NetworkManager : BookListDelegate, BookDetailDelegate {
@@ -34,7 +34,7 @@ final class NetworkManager : BookListDelegate, BookDetailDelegate {
     private var network: DataFetchable = Network()
     
     func getBookList() {
-        let urlString = urlCreator.getBooksListingURL()
+        let urlString = urlCreator.bookListingUrl
         network.fetch(from: urlString) { [weak self] (result) in
             switch(result) {
             
@@ -56,7 +56,7 @@ final class NetworkManager : BookListDelegate, BookDetailDelegate {
     }
     
     func getDetails(of bookId: Int) {
-        let urlString = urlCreator.getBookDetailURL(for: bookId)
+        var urlString : String { urlCreator.bookDetailUrl + "\(bookId)" }
         network.fetch(from: urlString) { [weak self] (result) in
             switch(result) {
             
@@ -66,12 +66,12 @@ final class NetworkManager : BookListDelegate, BookDetailDelegate {
                     book = try JSONDecoder().decode(Book.self, from: data)
                     self?.bookDetailReceiver?.receivedDetails(of: book)
                 }catch {
-                    self?.bookDetailReceiver?.receivedErrorWhileGettingBookDetail()
+                    self?.bookDetailReceiver?.receivedErrorWhileFetchingBookDetail()
                 }
                 break
                 
             case .failure( _):
-                self?.bookDetailReceiver?.receivedErrorWhileGettingBookDetail()
+                self?.bookDetailReceiver?.receivedErrorWhileFetchingBookDetail()
                 break
             }
         }

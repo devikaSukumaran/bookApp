@@ -8,17 +8,16 @@
 import Foundation
 
 protocol URLCreatable {
-    func getBooksListingURL() -> String
-    func getBookDetailURL(for id: Int) -> String
+    var bookListingUrl : String { get }
+    var bookDetailUrl : String { get }
 }
 
 struct URLCreator : URLCreatable {
-    
-    func getBooksListingURL() -> String {
-        return "\(NetworkConstants.baseUrl.rawValue)/\(NetworkConstants.bookListParam.rawValue)"
+    var bookListingUrl : String {
+        "\(NetworkConstants.baseUrl.rawValue)/\(NetworkConstants.bookListParam.rawValue)"
     }
     
-    func getBookDetailURL(for id: Int) -> String {
-        return "\(NetworkConstants.baseUrl.rawValue)/\(NetworkConstants.bookDetailParam.rawValue)/\(id)"
+    var bookDetailUrl : String {
+        "\(NetworkConstants.baseUrl.rawValue)/\(NetworkConstants.bookDetailParam.rawValue)/"
     }
 }

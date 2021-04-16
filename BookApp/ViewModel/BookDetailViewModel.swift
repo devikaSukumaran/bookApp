@@ -39,7 +39,7 @@ class BookDetailViewModel :  BookDetailReceivalAnnouncer, BookDetailer {
         self.uiUpdater?.updateListUI()
     }
     
-    func receivedErrorWhileGettingBookDetail() {
+    func receivedErrorWhileFetchingBookDetail() {
         self.uiUpdater?.displayErrorMessage()
     }
 }
