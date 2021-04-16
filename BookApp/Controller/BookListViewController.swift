@@ -7,9 +7,10 @@
 
 import UIKit
 
-class BookListViewController: UIViewController, BookListUIUpdater {
+class BookListViewController: UIViewController {
     @IBOutlet private weak var booksTableView : UITableView!
     @IBOutlet private weak var loader : UIActivityIndicatorView!
+    @IBOutlet private weak var errorMessage : UILabel!
     
     private var booksViewModel: BookLister = BookListViewModel()
     private var bookIdSelected : Int?
@@ -20,10 +21,20 @@ class BookListViewController: UIViewController, BookListUIUpdater {
         booksViewModel.beginAPICall()
     }
     
-    //MARK: BookListUIUpdater
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destinationVC = segue.destination as? BookDetailViewController {
+            destinationVC.bookDetailer = BookDetailViewModel(with: self.bookIdSelected ?? 0)
+            destinationVC.bookDetailer?.uiUpdater = destinationVC
+        }
+    }
+}
+
+//MARK: BookListUIUpdater
+extension BookListViewController : BookListUIUpdater {
     func updateListUI() {
         DispatchQueue.main.async {
             self.loader.stopAnimating()
+            self.errorMessage.isHidden = true
             self.booksTableView.reloadData()
         }
     }
@@ -34,15 +45,15 @@ class BookListViewController: UIViewController, BookListUIUpdater {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationVC = segue.destination as? BookDetailViewController {
-            destinationVC.bookDetailer = BookDetailViewModel(with: self.bookIdSelected ?? 0)
-            destinationVC.bookDetailer?.uiUpdater = destinationVC
+    func displayErrorMessage() {
+        DispatchQueue.main.async {
+            self.loader.stopAnimating()
+            self.errorMessage.isHidden = false
         }
     }
 }
 
-//MARK: UITableViewDelegate and UITableViewDataSource
+//MARK: UITableView related methods
 extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

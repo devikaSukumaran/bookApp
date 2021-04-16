@@ -167,18 +167,31 @@
                                         </connections>
                                     </tableView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="D2x-ML-RMQ">
-                                        <rect key="frame" x="188.5" y="339" width="37" height="37"/>
+                                        <rect key="frame" x="189" y="339" width="36" height="37"/>
                                         <color key="color" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </activityIndicatorView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Something went wrong. Please try again later." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKQ-y3-fUP">
+                                        <rect key="frame" x="67.5" y="226" width="279" height="96"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="279" id="Svr-Qe-ysm"/>
+                                            <constraint firstAttribute="height" constant="96" id="TXq-hP-CUE"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="16z-fh-1Ha" firstAttribute="top" secondItem="Jgo-AM-S6t" secondAttribute="top" id="1DU-iS-EL5"/>
+                                    <constraint firstItem="D2x-ML-RMQ" firstAttribute="leading" secondItem="UKQ-y3-fUP" secondAttribute="trailing" constant="-157.5" id="8Ad-oO-bDR"/>
                                     <constraint firstItem="D2x-ML-RMQ" firstAttribute="centerY" secondItem="Jgo-AM-S6t" secondAttribute="centerY" id="9be-Al-Kgr"/>
                                     <constraint firstAttribute="bottom" secondItem="16z-fh-1Ha" secondAttribute="bottom" id="9fI-d6-dgB"/>
                                     <constraint firstAttribute="trailing" secondItem="16z-fh-1Ha" secondAttribute="trailing" id="Ga2-f1-hcu"/>
                                     <constraint firstItem="D2x-ML-RMQ" firstAttribute="centerX" secondItem="Jgo-AM-S6t" secondAttribute="centerX" id="Rf4-qR-qBQ"/>
+                                    <constraint firstItem="UKQ-y3-fUP" firstAttribute="centerX" secondItem="Jgo-AM-S6t" secondAttribute="centerX" id="e8Y-EQ-fSq"/>
                                     <constraint firstItem="16z-fh-1Ha" firstAttribute="leading" secondItem="Jgo-AM-S6t" secondAttribute="leading" id="lHr-h3-4mk"/>
+                                    <constraint firstItem="D2x-ML-RMQ" firstAttribute="top" secondItem="UKQ-y3-fUP" secondAttribute="bottom" constant="17" id="zt5-sg-FWE"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Best Sellers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eKG-vz-a3i">
@@ -212,6 +225,7 @@
                     </view>
                     <connections>
                         <outlet property="booksTableView" destination="16z-fh-1Ha" id="Mix-Hm-fTK"/>
+                        <outlet property="errorMessage" destination="UKQ-y3-fUP" id="9gK-1t-ypL"/>
                         <outlet property="loader" destination="D2x-ML-RMQ" id="tXR-jB-vR0"/>
                         <segue destination="uO8-cA-Swx" kind="presentation" identifier="detailPageSegue" id="9TM-JZ-U61"/>
                     </connections>

@@ -17,6 +17,7 @@ protocol BookLister : class {
 protocol BookListUIUpdater : class {
     func updateListUI()
     func loadNextBatchOfBooks(for indices: [IndexPath])
+    func displayErrorMessage()
 }
 
 class BookListViewModel : BookLister, BooksListReceivalAnnouncer {
@@ -27,13 +28,6 @@ class BookListViewModel : BookLister, BooksListReceivalAnnouncer {
     func beginAPICall() {
         apiCaller.bookListReceiver = self
         apiCaller.getBookList()
-    }
-    
-    //MARK: BooksListReceivalAnnouncer
-    func received(_ books: Books) {
-        self.books = books
-        UserDefaults.standard.setValue(1, forKey: "resultsPage")
-        self.uiUpdater?.updateListUI()
     }
     
     func loadNextSetOfBookResults() {
@@ -58,5 +52,16 @@ class BookListViewModel : BookLister, BooksListReceivalAnnouncer {
             UserDefaults.standard.setValue(page+1, forKey: "resultsPage")
             self.uiUpdater?.loadNextBatchOfBooks(for: nextIndices)
         }
+    }
+    
+    //MARK: BooksListReceivalAnnouncer
+    func received(_ books: Books) {
+        self.books = books
+        UserDefaults.standard.setValue(1, forKey: "resultsPage")
+        self.uiUpdater?.updateListUI()
+    }
+    
+    func receivedErrorWhileFetchingBooks() {
+        self.uiUpdater?.displayErrorMessage()
     }
 }

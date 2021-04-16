@@ -19,6 +19,7 @@ protocol BookDetailDelegate : class {
 
 protocol BooksListReceivalAnnouncer : class {
     func received(_ books : Books)
+    func receivedErrorWhileFetchingBooks()
 }
 
 protocol BookDetailReceivalAnnouncer : class {
@@ -43,12 +44,12 @@ final class NetworkManager : BookListDelegate, BookDetailDelegate {
                     books = try JSONDecoder().decode(Books.self, from: data)
                     self?.bookListReceiver?.received(books)
                 } catch {
-                    print(error.localizedDescription)
+                    self?.bookListReceiver?.receivedErrorWhileFetchingBooks()
                 }
                 break
                 
-            case .failure(let error):
-                print(error.localizedDescription)
+            case .failure( _):
+                self?.bookListReceiver?.receivedErrorWhileFetchingBooks()
                 break
             }
         }
