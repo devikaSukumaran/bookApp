@@ -53,7 +53,6 @@ extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.booksTableCellName) as? BookListCell else {
             fatalError(Constants.errorMessageForMissingCells)
         }
