@@ -7,42 +7,31 @@
 
 import UIKit
 
-protocol BookDetailable {
-    var bookDetailer : BookDetailer? { get set }
-}
-
-class BookDetailViewController : UIViewController, BookDetailable, BookDetailUIUpdater {
+class BookDetailViewController : UIViewController, BookDetailUIUpdater {
     
-    @IBOutlet weak var bookTitle : UILabel!
-    @IBOutlet weak var author : UILabel!
-    @IBOutlet weak var isbn : UILabel!
-    @IBOutlet weak var price : UILabel!
-    @IBOutlet weak var currency : UILabel!
-    @IBOutlet weak var bookDescription : UILabel!
-    @IBOutlet weak var bookContentView : UIView!
-    @IBOutlet weak var bookDescriptionView : UIView!
-    @IBOutlet weak var loaderView : UIView!
-    @IBOutlet weak var errorMessage : UILabel!
-    @IBOutlet weak var loader : UIActivityIndicatorView!
+    @IBOutlet private weak var bookTitle : UILabel!
+    @IBOutlet private weak var author : UILabel!
+    @IBOutlet private weak var isbn : UILabel!
+    @IBOutlet private weak var price : UILabel!
+    @IBOutlet private weak var currency : UILabel!
+    @IBOutlet private weak var bookDescription : UILabel!
+    @IBOutlet private weak var bookContentView : UIView!
+    @IBOutlet private weak var bookDescriptionView : UIView!
+    @IBOutlet private weak var loaderView : UIView!
+    @IBOutlet private weak var errorMessage : UILabel!
+    @IBOutlet private weak var loader : UIActivityIndicatorView!
     
     var bookDetailer: BookDetailer?
-    var bookId : Int = 0
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        bookDetailer = BookDetailViewModel(bookId: self.bookId) as BookDetailer
-        bookDetailer?.uiUpdater = self
+        bookDetailer?.beginAPICall()
     }
     
     //MARK: BookDetailUIUpdater
     func updateListUI() {
-        
         DispatchQueue.main.async {
-            
             if let book = self.bookDetailer?.book {
-                
                 self.loaderView.isHidden = true
                 self.bookContentView.isHidden = !self.loaderView.isHidden
                 self.bookDescriptionView.isHidden = !self.loaderView.isHidden
@@ -57,9 +46,7 @@ class BookDetailViewController : UIViewController, BookDetailable, BookDetailUIU
     }
     
     func displayErrorMessage() {
-        
         DispatchQueue.main.async {
-            
             self.loader.stopAnimating()
             self.errorMessage.isHidden = false
         }

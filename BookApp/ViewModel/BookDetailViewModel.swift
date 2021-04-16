@@ -8,33 +8,33 @@
 import Foundation
 
 protocol BookDetailer : class {
-    
     var book : Book? { get set }
-    var apiCaller : APICallable { get }
     var uiUpdater : BookDetailUIUpdater? { get set }
+    func beginAPICall()
 }
 
 protocol BookDetailUIUpdater {
-    
     func updateListUI()
     func displayErrorMessage()
 }
 
 class BookDetailViewModel :  BookDetailReceivalAnnouncer, BookDetailer {
-    
+    private var bookId : Int
     var book : Book?
-    var apiCaller : APICallable = NetworkManager() as APICallable
+    var apiCaller : APICallable = NetworkManager()
     var uiUpdater : BookDetailUIUpdater?
     
-    init(bookId : Int) {
-        
+    init(with id : Int) {
+        self.bookId = id
+    }
+    
+    func beginAPICall() {
         apiCaller.bookDetailReceiver = self
-        apiCaller.getDetails(of: bookId)
+        apiCaller.getDetails(of: self.bookId)
     }
     
     //MARK: BookDetailReceivalAnnouncer
     func receivedDetails(of book: Book) {
-        
         self.book = book
         self.uiUpdater?.updateListUI()
     }

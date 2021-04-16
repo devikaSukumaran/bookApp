@@ -31,7 +31,8 @@ class BookListViewController: UIViewController, BookListUIUpdater {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? BookDetailViewController {
-            destinationVC.bookId = self.bookIdSelected ?? 0
+            destinationVC.bookDetailer = BookDetailViewModel(with: self.bookIdSelected ?? 0)
+            destinationVC.bookDetailer?.uiUpdater = destinationVC
         }
     }
 }
