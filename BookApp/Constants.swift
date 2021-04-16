@@ -11,4 +11,5 @@ struct Constants {
     static let booksTableCellName = "bookListCell"
     static let segueToBookDetailScreen = "detailPageSegue"
     static let errorMessageForMissingCells = "Tableview cell not found"
+    static let numberOfResultsPerPage = 6
 }

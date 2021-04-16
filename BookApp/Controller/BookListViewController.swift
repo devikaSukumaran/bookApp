@@ -28,6 +28,12 @@ class BookListViewController: UIViewController, BookListUIUpdater {
         }
     }
     
+    func loadNextBatchOfBooks(for indices: [IndexPath]) {
+        DispatchQueue.main.async {
+            self.booksTableView.insertRows(at: indices, with: .automatic)
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? BookDetailViewController {
             destinationVC.bookDetailer = BookDetailViewModel(with: self.bookIdSelected ?? 0)
@@ -40,7 +46,10 @@ class BookListViewController: UIViewController, BookListUIUpdater {
 extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.booksViewModel.books.count
+        if let page = UserDefaults.standard.value(forKey: "resultsPage") as? Int {
+            return booksViewModel.books.count > page*Constants.numberOfResultsPerPage ? page*Constants.numberOfResultsPerPage : booksViewModel.books.count
+        }
+        return 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -57,6 +66,18 @@ extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         bookIdSelected = self.booksViewModel.books[indexPath.row].id
         performSegue(withIdentifier: Constants.segueToBookDetailScreen, sender: self)
+    }
+    
+    //Finding scroll on tableView bottom to load next set of books
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let visibleRows = self.booksTableView.indexPathsForVisibleRows
+        guard let page = UserDefaults.standard.value(forKey: "resultsPage") as? Int else {
+            return
+        }
+        let resultsCount = Constants.numberOfResultsPerPage*page
+        if ((visibleRows?.contains([0, resultsCount - 2])) != nil) {
+            booksViewModel.loadNextSetOfBookResults()
+        }
     }
 }
 
