@@ -23,8 +23,8 @@ class BookListViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationVC = segue.destination as? BookDetailViewController {
-            destinationVC.bookDetailer = BookDetailViewModel(with: self.bookIdSelected ?? 0)
-            destinationVC.bookDetailer?.uiUpdater = destinationVC
+            destinationVC.detailerViewModel = BookDetailViewModel(with: self.bookIdSelected ?? 0)
+            destinationVC.detailerViewModel?.uiUpdater = destinationVC
         }
     }
 }
@@ -90,4 +90,3 @@ extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
         }
     }
 }
-

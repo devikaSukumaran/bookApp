@@ -20,17 +20,17 @@ class BookDetailViewController : UIViewController, BookDetailUIUpdater {
     @IBOutlet private weak var errorMessage : UILabel!
     @IBOutlet private weak var loader : UIActivityIndicatorView!
     
-    var bookDetailer: BookDetailer?
+    var detailerViewModel: BookDetailer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bookDetailer?.beginAPICall()
+        detailerViewModel?.beginAPICall()
     }
     
     //MARK: BookDetailUIUpdater
     func updateListUI() {
         DispatchQueue.main.async {
-            if let book = self.bookDetailer?.book {
+            if let book = self.detailerViewModel?.book {
                 self.loaderView.isHidden = true
                 self.detailContentView.isHidden = !self.loaderView.isHidden
                 self.bookDescriptionView.isHidden = !self.loaderView.isHidden
