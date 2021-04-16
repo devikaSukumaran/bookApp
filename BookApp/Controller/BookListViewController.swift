@@ -57,7 +57,6 @@ extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         bookIdSelected = self.booksViewModel.books[indexPath.row].id
         performSegue(withIdentifier: Constants.segueToBookDetailScreen, sender: self)
-        tableView.deselectRow(at: indexPath, animated: false)
     }
 }
 
