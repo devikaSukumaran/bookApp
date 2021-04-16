@@ -27,7 +27,6 @@ protocol BookDetailReceivalAnnouncer : class {
 }
 
 final class NetworkManager : BookListDelegate, BookDetailDelegate {
-    
     weak var bookListReceiver : BooksListReceivalAnnouncer?
     weak var bookDetailReceiver : BookDetailReceivalAnnouncer?
     private var urlCreator: URLCreatable = URLCreator()
