@@ -20,7 +20,7 @@ protocol BookListUIUpdater : class {
 class BookListViewModel : BookLister, BooksListReceivalAnnouncer {
     var books: Books = []
     weak var uiUpdater : BookListUIUpdater?
-    private var apiCaller : APICallable = NetworkManager()
+    private var apiCaller : BookListDelegate = NetworkManager()
     
     func beginAPICall() {
         apiCaller.bookListReceiver = self

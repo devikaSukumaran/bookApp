@@ -14,7 +14,6 @@ protocol DataFetchable {
 final class Network : DataFetchable {
     
     func fetch(from url: String, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-       
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { (data, response, error) in
             
             guard let data = data else {

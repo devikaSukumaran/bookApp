@@ -9,6 +9,8 @@ import Foundation
 
 enum NetworkConstants : String {
     case baseUrl = "https://tpbookserver.herokuapp.com"
+    case bookListParam = "books"
+    case bookDetailParam = "book"
 }
 
 enum NetworkError : Error {

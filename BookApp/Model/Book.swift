@@ -8,7 +8,6 @@
 import Foundation
 
 struct Book: Codable {
-    
     let id: Int
     let title, isbn: String
     let price: Int

@@ -7,39 +7,35 @@
 
 import Foundation
 
-protocol APICallable : class {
-    
+protocol BookListDelegate : class {
     var bookListReceiver : BooksListReceivalAnnouncer? { get set }
-    var bookDetailReceiver : BookDetailReceivalAnnouncer? { get set }
-    var urlCreator : URLCreatable { get set }
-    var network : DataFetchable { get set }
-    
     func getBookList()
+}
+
+protocol BookDetailDelegate : class {
+    var bookDetailReceiver : BookDetailReceivalAnnouncer? { get set }
     func getDetails(of bookId: Int)
 }
 
-protocol BooksListReceivalAnnouncer {
+protocol BooksListReceivalAnnouncer : class {
     func received(_ books : Books)
 }
 
-protocol BookDetailReceivalAnnouncer {
-    
+protocol BookDetailReceivalAnnouncer : class {
     func receivedDetails(of book : Book)
     func receivedErrorWhileGettingBookDetail()
 }
 
-final class NetworkManager : APICallable {
+final class NetworkManager : BookListDelegate, BookDetailDelegate {
     
-    var bookListReceiver : BooksListReceivalAnnouncer?
-    var bookDetailReceiver : BookDetailReceivalAnnouncer?
-    var urlCreator: URLCreatable = URLCreator() as URLCreatable
-    var network: DataFetchable = Network() as DataFetchable
+    weak var bookListReceiver : BooksListReceivalAnnouncer?
+    weak var bookDetailReceiver : BookDetailReceivalAnnouncer?
+    private var urlCreator: URLCreatable = URLCreator()
+    private var network: DataFetchable = Network()
     
     func getBookList() {
-        
         let urlString = urlCreator.getBooksListingURL()
         network.fetch(from: urlString) { [weak self] (result) in
-            
             switch(result) {
             
             case .success(let data):
@@ -57,14 +53,13 @@ final class NetworkManager : APICallable {
                 break
             }
         }
-        
     }
     
     func getDetails(of bookId: Int) {
-        
         let urlString = urlCreator.getBookDetailURL(for: bookId)
         network.fetch(from: urlString) { [weak self] (result) in
             switch(result) {
+            
             case .success(let data):
                 var book : Book
                 do {

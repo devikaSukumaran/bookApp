@@ -20,7 +20,7 @@ protocol BookDetailUIUpdater : class {
 
 class BookDetailViewModel :  BookDetailReceivalAnnouncer, BookDetailer {
     private var bookId : Int
-    private var apiCaller : APICallable = NetworkManager()
+    private var apiCaller : BookDetailDelegate = NetworkManager()
     var book : Book?
     weak var uiUpdater : BookDetailUIUpdater?
     

@@ -8,7 +8,6 @@
 import UIKit
 
 class BookListCell : UITableViewCell {
-    
     @IBOutlet weak var name : UILabel!
     @IBOutlet weak var author : UILabel!
     @IBOutlet weak var isbnValue : UILabel!
@@ -20,7 +19,6 @@ class BookListCell : UITableViewCell {
     }
     
     private func updateCell(with book : Book) {
-        
         self.name.text = book.title
         self.author.text = book.author
         self.isbnValue.text = book.isbn
