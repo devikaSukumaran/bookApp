@@ -8,7 +8,6 @@
 import UIKit
 
 class BookDetailViewController : UIViewController, BookDetailUIUpdater {
-    
     @IBOutlet private weak var bookTitle : UILabel!
     @IBOutlet private weak var author : UILabel!
     @IBOutlet private weak var isbn : UILabel!

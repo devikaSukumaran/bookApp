@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BookListViewController.swift
 //  BookApp
 //
 //  Created by Devika Sukumaran on 14/04/2021.
@@ -8,7 +8,6 @@
 import UIKit
 
 class BookListViewController: UIViewController, BookListUIUpdater {
-    
     @IBOutlet private weak var booksTableView : UITableView!
     @IBOutlet private weak var loader : UIActivityIndicatorView!
     

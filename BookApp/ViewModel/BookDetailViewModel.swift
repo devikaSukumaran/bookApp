@@ -13,16 +13,16 @@ protocol BookDetailer : class {
     func beginAPICall()
 }
 
-protocol BookDetailUIUpdater {
+protocol BookDetailUIUpdater : class {
     func updateListUI()
     func displayErrorMessage()
 }
 
 class BookDetailViewModel :  BookDetailReceivalAnnouncer, BookDetailer {
     private var bookId : Int
+    private var apiCaller : APICallable = NetworkManager()
     var book : Book?
-    var apiCaller : APICallable = NetworkManager()
-    var uiUpdater : BookDetailUIUpdater?
+    weak var uiUpdater : BookDetailUIUpdater?
     
     init(with id : Int) {
         self.bookId = id
