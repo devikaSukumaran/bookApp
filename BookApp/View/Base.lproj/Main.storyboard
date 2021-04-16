@@ -69,48 +69,48 @@
                                                                                     <rect key="frame" x="0.0" y="0.0" width="166" height="50"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBY-8R-cYY">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="34" height="50"/>
-                                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="32" height="50"/>
+                                                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="978-0735619678" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7y-e4-6M7">
-                                                                                            <rect key="frame" x="37" y="0.0" width="129" height="50"/>
-                                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                                            <rect key="frame" x="35" y="0.0" width="131" height="50"/>
+                                                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                     </subviews>
                                                                                     <constraints>
-                                                                                        <constraint firstItem="g7y-e4-6M7" firstAttribute="leading" secondItem="8Wc-oc-uXv" secondAttribute="leading" constant="37" id="Gs2-Mt-eYL"/>
+                                                                                        <constraint firstItem="g7y-e4-6M7" firstAttribute="leading" secondItem="8Wc-oc-uXv" secondAttribute="leading" constant="35" id="Gs2-Mt-eYL"/>
                                                                                         <constraint firstAttribute="width" constant="166" id="qAz-qt-lcP"/>
                                                                                     </constraints>
                                                                                 </stackView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qb-tj-BXM">
-                                                                                    <rect key="frame" x="166" y="0.0" width="152" height="50"/>
+                                                                                    <rect key="frame" x="166" y="0.0" width="147" height="50"/>
                                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
                                                                                 </label>
                                                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="mnQ-qF-8F9">
-                                                                                    <rect key="frame" x="318" y="0.0" width="60" height="50"/>
+                                                                                    <rect key="frame" x="313" y="0.0" width="65" height="50"/>
                                                                                     <subviews>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2954" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kh9-m0-w2F">
-                                                                                            <rect key="frame" x="0.0" y="0.0" width="33" height="50"/>
-                                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                                            <rect key="frame" x="0.0" y="0.0" width="36.5" height="50"/>
+                                                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="14"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="EUR" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3r6-zz-xsq">
-                                                                                            <rect key="frame" x="36" y="0.0" width="24" height="50"/>
-                                                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                                                            <rect key="frame" x="39.5" y="0.0" width="25.5" height="50"/>
+                                                                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                                                                             <nil key="textColor"/>
                                                                                             <nil key="highlightedColor"/>
                                                                                         </label>
                                                                                     </subviews>
                                                                                     <constraints>
                                                                                         <constraint firstAttribute="height" constant="50" id="DER-8m-rjM"/>
-                                                                                        <constraint firstAttribute="width" constant="60" id="SPc-7o-wWr"/>
+                                                                                        <constraint firstAttribute="width" constant="65" id="SPc-7o-wWr"/>
                                                                                     </constraints>
                                                                                 </stackView>
                                                                             </subviews>
@@ -267,17 +267,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Pbn-zi-Sjb">
-                                        <rect key="frame" x="20" y="260" width="189" height="20.5"/>
+                                        <rect key="frame" x="20" y="260" width="196" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ISBN: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Md-Jy-CS9">
-                                                <rect key="frame" x="0.0" y="0.0" width="46.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="50.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="978-0735619678" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBT-Mu-emT">
-                                                <rect key="frame" x="54.5" y="0.0" width="134.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <rect key="frame" x="58.5" y="0.0" width="137.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="18"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -287,17 +287,17 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="Fjy-CE-LLB">
-                                        <rect key="frame" x="20" y="288.5" width="74" height="20.5"/>
+                                        <rect key="frame" x="20" y="288.5" width="78.5" height="20.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBZ-aa-nPC">
-                                                <rect key="frame" x="0.0" y="0.0" width="39.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="40.5" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="18"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EUR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxO-7Z-ycy">
-                                                <rect key="frame" x="41.5" y="0.0" width="32.5" height="20.5"/>
-                                                <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                <rect key="frame" x="42.5" y="0.0" width="36" height="20.5"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -417,15 +417,15 @@ Widely considered one of the best practical guides to programming, Steve McConne
                     </view>
                     <connections>
                         <outlet property="author" destination="Y9t-dP-Nwg" id="7Q5-2H-e8c"/>
-                        <outlet property="bookContentView" destination="W0e-Qu-vVT" id="86f-fI-4lT"/>
-                        <outlet property="bookDescription" destination="Z86-Pi-h55" id="zrF-A2-Hkj"/>
                         <outlet property="bookDescriptionView" destination="HFP-ba-qVO" id="21k-W8-cpA"/>
-                        <outlet property="bookTitle" destination="y3g-Sh-ZIg" id="BA2-Ev-O9q"/>
                         <outlet property="currency" destination="QxO-7Z-ycy" id="Rfh-9z-0u9"/>
+                        <outlet property="detailContentView" destination="W0e-Qu-vVT" id="86f-fI-4lT"/>
                         <outlet property="errorMessage" destination="3hu-xo-Tf0" id="ncH-lK-x3V"/>
                         <outlet property="isbn" destination="fBT-Mu-emT" id="mJ6-kM-d5k"/>
                         <outlet property="loader" destination="uBF-jo-En5" id="iSi-Oj-rle"/>
                         <outlet property="loaderView" destination="8q1-pn-fxl" id="3l8-31-TjK"/>
+                        <outlet property="name" destination="y3g-Sh-ZIg" id="BA2-Ev-O9q"/>
+                        <outlet property="overview" destination="Z86-Pi-h55" id="zrF-A2-Hkj"/>
                         <outlet property="price" destination="HBZ-aa-nPC" id="9WC-oW-mc0"/>
                     </connections>
                 </viewController>
