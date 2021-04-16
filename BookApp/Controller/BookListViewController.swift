@@ -57,7 +57,7 @@ extension BookListViewController : BookListUIUpdater {
 extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let page = UserDefaults.standard.value(forKey: "resultsPage") as? Int {
+        if let page = UserDefaults.standard.value(forKey: Constants.resultsPageKey) as? Int {
             return booksViewModel.books.count > page*Constants.numberOfResultsPerPage ? page*Constants.numberOfResultsPerPage : booksViewModel.books.count
         }
         return 0
@@ -81,7 +81,7 @@ extension BookListViewController : UITableViewDelegate, UITableViewDataSource {
     //Finding scroll on tableView bottom to load next set of books
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let visibleRows = self.booksTableView.indexPathsForVisibleRows
-        guard let page = UserDefaults.standard.value(forKey: "resultsPage") as? Int else {
+        guard let page = UserDefaults.standard.value(forKey: Constants.resultsPageKey) as? Int else {
             return
         }
         let resultsCount = Constants.numberOfResultsPerPage*page

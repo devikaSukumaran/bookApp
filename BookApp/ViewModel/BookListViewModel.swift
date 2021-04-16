@@ -31,7 +31,7 @@ class BookListViewModel : BookLister, BooksListReceivalAnnouncer {
     }
     
     func loadNextSetOfBookResults() {
-        guard let page = UserDefaults.standard.value(forKey: "resultsPage") as? Int else {
+        guard let page = UserDefaults.standard.value(forKey: Constants.resultsPageKey) as? Int else {
             return
         }
         let startingIndex = page*Constants.numberOfResultsPerPage
@@ -49,7 +49,7 @@ class BookListViewModel : BookLister, BooksListReceivalAnnouncer {
                 }
             }
             
-            UserDefaults.standard.setValue(page+1, forKey: "resultsPage")
+            UserDefaults.standard.setValue(page+1, forKey: Constants.resultsPageKey)
             self.uiUpdater?.loadNextBatchOfBooks(for: nextIndices)
         }
     }
@@ -57,7 +57,7 @@ class BookListViewModel : BookLister, BooksListReceivalAnnouncer {
     //MARK: BooksListReceivalAnnouncer
     func received(_ books: Books) {
         self.books = books
-        UserDefaults.standard.setValue(1, forKey: "resultsPage")
+        UserDefaults.standard.setValue(1, forKey: Constants.resultsPageKey)
         self.uiUpdater?.updateListUI()
     }
     
