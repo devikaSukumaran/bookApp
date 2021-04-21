@@ -25,6 +25,7 @@ class BookListViewController: UIViewController {
         if let destinationVC = segue.destination as? BookDetailViewController {
             destinationVC.detailerViewModel = BookDetailViewModel(with: self.bookIdSelected ?? 0)
             destinationVC.detailerViewModel?.uiUpdater = destinationVC
+            destinationVC.detailerViewModel?.beginAPICall()
         }
     }
 }

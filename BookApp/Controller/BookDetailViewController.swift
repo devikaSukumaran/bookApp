@@ -22,11 +22,6 @@ class BookDetailViewController : UIViewController, BookDetailUIUpdater {
     
     var detailerViewModel: BookDetailer?
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        detailerViewModel?.beginAPICall()
-    }
-    
     //MARK: BookDetailUIUpdater
     func updateListUI() {
         DispatchQueue.main.async {
